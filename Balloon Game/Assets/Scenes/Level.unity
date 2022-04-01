@@ -272,6 +272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1256357759124277781, guid: 0ae5bab20a4814ac0840dcc8c32cd9b2, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae5bab20a4814ac0840dcc8c32cd9b2, type: 3}
 --- !u!1 &272876863
@@ -468,25 +472,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1103533891 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1254969024778041369, guid: 0ae5bab20a4814ac0840dcc8c32cd9b2, type: 3}
-  m_PrefabInstance: {fileID: 143260108}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1103533898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103533891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12a6784e45308b94fb8095667cb0718f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalForce: 5
-  verticalForce: 5
 --- !u!1 &1944280930
 GameObject:
   m_ObjectHideFlags: 0

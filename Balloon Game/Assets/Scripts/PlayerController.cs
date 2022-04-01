@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
 
     // Amount of force applied to the balloon
-    public float horizontalForce = 5;
-    public float verticalForce = 5;
+    public float horizontalForce = 10;
+    public float verticalForce = 50;
 
 
 
@@ -28,7 +28,23 @@ public class PlayerController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
 
+        //let the balloon go up
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            playerRb.AddForce(Vector3.up * verticalForce);
+        }
 
-        playerRb.AddForce(Vector3.up * verticalForce * verticalInput);
+
+        //let the balloon go side to side
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+           playerRb.AddForce(Vector3.right * horizontalForce);
+           playerRb.AddTorque()
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            playerRb.AddForce(Vector3.left * horizontalForce);
+        }
+
     }
 }

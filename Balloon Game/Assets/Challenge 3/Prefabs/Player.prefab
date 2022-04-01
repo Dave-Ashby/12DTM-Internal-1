@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1256357759124277781}
   - component: {fileID: 1672443118734096}
   - component: {fileID: 785340223821834805}
+  - component: {fileID: 178577893}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -102,7 +103,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 90
+  m_Constraints: 88
   m_CollisionDetection: 0
 --- !u!65 &1672443118734096
 BoxCollider:
@@ -213,6 +214,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &178577893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254969024778041369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12a6784e45308b94fb8095667cb0718f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalForce: 50
+  verticalForce: 50
 --- !u!1001 &1256357759050569762
 PrefabInstance:
   m_ObjectHideFlags: 0
