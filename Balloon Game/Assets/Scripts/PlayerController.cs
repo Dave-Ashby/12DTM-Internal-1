@@ -6,27 +6,28 @@ public class PlayerController : MonoBehaviour
 {
   
 
-    //
+    //physics of the balloon
     private Rigidbody playerRb;
+    private float gravityModifier = 1.5f;
 
     // Amount of force applied to the balloon
-    public float horizontalForce = 10;
-    public float verticalForce = 50;
+    public float horizontalForce = 25f;
+    public float verticalForce = 60f;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        Physics.gravity *= gravityModifier;
         playerRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Detect Inputs
-        float verticalInput = Input.GetAxis("Vertical");
-        float horizontalInput = Input.GetAxis("Horizontal");
+        //Detect Collisions
+
 
         //let the balloon go up
         if (Input.GetKey(KeyCode.UpArrow))
@@ -39,7 +40,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
            playerRb.AddForce(Vector3.right * horizontalForce);
-           playerRb.AddTorque()
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
