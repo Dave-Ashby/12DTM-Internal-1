@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-  
+
 
     //physics of the balloon
     private Rigidbody playerRb;
@@ -22,12 +22,9 @@ public class PlayerController : MonoBehaviour
         Physics.gravity *= gravityModifier;
         playerRb = GetComponent<Rigidbody>();
     }
-
     // Update is called once per frame
     void Update()
     {
-        //Detect Collisions
-
 
         //let the balloon go up
         if (Input.GetKey(KeyCode.UpArrow))
@@ -39,11 +36,21 @@ public class PlayerController : MonoBehaviour
         //let the balloon go side to side
         if (Input.GetKey(KeyCode.RightArrow))
         {
-           playerRb.AddForce(Vector3.right * horizontalForce);
+            playerRb.AddForce(Vector3.right * horizontalForce);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             playerRb.AddForce(Vector3.left * horizontalForce);
+        }
+
+    }
+
+    //Detect Collisions
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Danger"))
+        {
+            Debug.Log("Game Over!");
         }
 
     }
