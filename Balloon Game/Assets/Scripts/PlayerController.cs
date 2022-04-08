@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     //physics of the balloon
     private Rigidbody playerRb;
-    private float gravityModifier = 2.0f;
+    private float GravityModifier = 2.0f;
 
     // Amount of force applied to the balloon
     public float horizontalForce = 25f;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Physics.gravity *= gravityModifier;
+        Physics.gravity *= GravityModifier;
         playerRb = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
