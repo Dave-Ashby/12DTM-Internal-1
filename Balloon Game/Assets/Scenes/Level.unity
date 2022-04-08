@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -226,11 +226,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 178577893, guid: 0ae5bab20a4814ac0840dcc8c32cd9b2, type: 3}
       propertyPath: verticalForce
-      value: 30
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 178577893, guid: 0ae5bab20a4814ac0840dcc8c32cd9b2, type: 3}
       propertyPath: horizontalForce
-      value: 5
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1950905847, guid: 0ae5bab20a4814ac0840dcc8c32cd9b2, type: 3}
       propertyPath: spinSpeed
@@ -286,11 +286,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1256357759124277781, guid: 0ae5bab20a4814ac0840dcc8c32cd9b2, type: 3}
       propertyPath: m_Drag
-      value: 1.1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 1256357759124277781, guid: 0ae5bab20a4814ac0840dcc8c32cd9b2, type: 3}
       propertyPath: m_Mass
-      value: 2.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae5bab20a4814ac0840dcc8c32cd9b2, type: 3}

@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Danger"))
         {
             Debug.Log("Game Over!");
+
         }
 
     }
