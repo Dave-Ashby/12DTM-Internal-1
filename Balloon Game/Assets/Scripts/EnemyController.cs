@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float horizontalForce = 2;
+    public float horizontalForce = 10;
     public float VerticalForce = 15;
 
     private Rigidbody enemyRb;
