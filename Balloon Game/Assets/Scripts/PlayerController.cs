@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     // Amount of force applied to the balloon
     public float horizontalForce = 25f;
-    public float verticalForce = 100f;
+    public float verticalForce = 110f;
 
 
 
