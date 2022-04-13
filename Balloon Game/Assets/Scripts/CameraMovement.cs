@@ -13,8 +13,11 @@ public class CameraMovement : MonoBehaviour
     public Rigidbody cameraRb;
 
     // Force applied to the camera in order to move it
-    public float horizontalForce = 30f;
-    public float verticalForce = 120f;
+    public float horizontalForce = 20f;
+    public float verticalForce = 30f;
+
+    public Vector3 cameraMovementX;
+    public Vector3 cameraMovementY;
 
     // Start is called before the first frame update
     void Start()
@@ -27,25 +30,33 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         // Follow the player
-        if ((player.position.x - mainCamera.position.x) > 4)
+        //if ((player.position.x - mainCamera.position.x) > 4)
         {
-            cameraRb.AddForce(Vector3.right * horizontalForce);
+            //cameraRb.AddForce(Vector3.right * horizontalForce);
         }
 
-        if ((mainCamera.position.x - player.position.x) > 4)
+        //if ((mainCamera.position.x - player.position.x) > 4)
         {
-            cameraRb.AddForce(Vector3.left * horizontalForce);
+            //cameraRb.AddForce(Vector3.left * horizontalForce);
         }
 
-        if ((player.position.y - mainCamera.position.y) > 3)
+        //if ((player.position.y - mainCamera.position.y) > 3)
         {
-            cameraRb.AddForce(Vector3.up * verticalForce);
+            //cameraRb.AddForce(Vector3.up * verticalForce);
         }
 
-        if ((mainCamera.position.y - player.position.y) > 3)
+        //if ((mainCamera.position.y - player.position.y) > 3)
         {
-            cameraRb.AddForce(Vector3.down * verticalForce);
+            //cameraRb.AddForce(Vector3.down * verticalForce);
         }
 
+
+
+
+
+        cameraMovementX = new Vector3((player.position.x - mainCamera.position.x), 0, 0);
+        cameraMovementY = new Vector3(0, (player.position.y - mainCamera.position.y), 0);
+        cameraRb.AddForce(cameraMovementX * horizontalForce);
+        cameraRb.AddForce(cameraMovementY * verticalForce);
     }
 }
