@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Collection : MonoBehaviour
 {
-
+    //Variables
     public int pointValue;
     private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Define what gameManager is
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
@@ -20,13 +21,14 @@ public class Collection : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter(Collision collision)
+    //Detect collisions with the player
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             gameManager.UpdateScore(pointValue);
-            Destroy(gameObject);
         }
     }
+
 
 }

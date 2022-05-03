@@ -5,6 +5,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+
+    //Variables
     private int score;
     public TextMeshProUGUI scoreText;
 
@@ -13,6 +15,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Define the score
         score = 0;
         UpdateScore(0);
     }
@@ -23,6 +26,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+    //Update the score when given the signal
     public void UpdateScore(int scoreToAdd)
     {
         score = score + scoreToAdd;
