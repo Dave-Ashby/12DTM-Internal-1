@@ -8,11 +8,11 @@ public class PlayerController : MonoBehaviour
 
     //Variables for the physics of the balloon
     private Rigidbody playerRb;
-    private float GravityModifier = 2.0f;
+    private float GravityModifier = 1.5f;
 
     //Variables for the amount of force applied to the balloon
     public float horizontalForce = 25f;
-    public float verticalForce = 110f;
+    public float verticalForce = 70f;
 
 
 

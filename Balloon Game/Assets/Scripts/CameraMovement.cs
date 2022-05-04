@@ -56,7 +56,28 @@ public class CameraMovement : MonoBehaviour
 
         cameraMovementX = new Vector3((player.position.x - mainCamera.position.x), 0, 0);
         cameraMovementY = new Vector3(0, (player.position.y - mainCamera.position.y), 0);
-        cameraRb.AddForce(cameraMovementX * horizontalForce);
-        cameraRb.AddForce(cameraMovementY * verticalForce);
+
+
+        
+
+        if ((player.position.y - mainCamera.position.y) > 3)
+        {
+            cameraRb.AddForce(cameraMovementY * verticalForce);
+        }
+        else if ((player.position.y - mainCamera.position.y) < -3)
+        {
+            cameraRb.AddForce(cameraMovementY * verticalForce);
+        }
+
+        if ((player.position.x - mainCamera.position.x) > 4)
+        {
+            cameraRb.AddForce(cameraMovementX * horizontalForce);
+        }
+        else if ((player.position.x - mainCamera.position.x) < -4)
+        {
+            cameraRb.AddForce(cameraMovementX * horizontalForce);
+        }
+
+
     }
 }
