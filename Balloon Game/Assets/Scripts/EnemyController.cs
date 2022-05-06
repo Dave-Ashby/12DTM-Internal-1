@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    //Variables:
+
+    //Enemy speed
     public float horizontalForce = 10;
     public float VerticalForce = 15;
 
+    //Rigidbody
     private Rigidbody enemyRb;
     
-
+    //Posistions 
     public Transform player;
     public Transform enemy;
+
+    //Tell the enemy when to move
+    public float gate;
+
 
     public Vector3 movementX;
     public Vector3 movementY;
@@ -26,10 +34,14 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementX = new Vector3((player.position.x - enemy.position.x), 0, 0);
-        movementY = new Vector3(0, (player.position.y - enemy.position.y), 0);
-        enemyRb.AddForce(movementX.normalized * horizontalForce);
-        enemyRb.AddForce(movementY.normalized * VerticalForce);
+        if (player.position.x > gate)
+        {
+            movementX = new Vector3((player.position.x - enemy.position.x), 0, 0);
+            movementY = new Vector3(0, (player.position.y - enemy.position.y), 0);
+            enemyRb.AddForce(movementX.normalized * horizontalForce);
+            enemyRb.AddForce(movementY.normalized * VerticalForce);
+        }
+        
 
     }
 
