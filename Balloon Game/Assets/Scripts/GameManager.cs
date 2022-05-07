@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     //Variables
     private int score;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI deathText;
 
 
 
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
         //Define the score
         score = 0;
         UpdateScore(0);
+        deathText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -31,5 +33,10 @@ public class GameManager : MonoBehaviour
     {
         score = score + scoreToAdd;
         scoreText.text = "Score: " + score;
+    }
+
+    public void GameOver()
+    {
+        deathText.gameObject.SetActive(true);
     }
 }

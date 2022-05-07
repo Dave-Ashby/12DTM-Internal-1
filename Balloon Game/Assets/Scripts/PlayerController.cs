@@ -14,13 +14,15 @@ public class PlayerController : MonoBehaviour
     public float horizontalForce = 25f;
     public float verticalForce = 70f;
 
-
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         Physics.gravity *= GravityModifier;
         playerRb = GetComponent<Rigidbody>();
+
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
     // Update is called once per frame
     void Update()
@@ -52,7 +54,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Game Over!");
             enabled = false;
-
+            gameManager.GameOver();
         }
 
     }
