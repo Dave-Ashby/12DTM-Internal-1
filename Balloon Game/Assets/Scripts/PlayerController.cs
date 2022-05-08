@@ -6,36 +6,39 @@ public class PlayerController : MonoBehaviour
 {
 
 
-    //Variables for the physics of the balloon
+    // Variables for the physics of the balloon
     private Rigidbody playerRb;
     private float GravityModifier = 1.5f;
 
-    //Variables for the amount of force applied to the balloon
+    // Variables for the amount of force applied to the balloon
     public float horizontalForce = 25f;
     public float verticalForce = 70f;
 
+    // Game Manager
     private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Player variables defined
         Physics.gravity *= GravityModifier;
         playerRb = GetComponent<Rigidbody>();
 
+        // Letting the player affect the Game Manager
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
     // Update is called once per frame
     void Update()
     {
 
-        //let the balloon go up
+        // Let the balloon go up
         if (Input.GetKey(KeyCode.UpArrow))
         {
             playerRb.AddForce(Vector3.up * verticalForce);
         }
 
 
-        //let the balloon go side to side
+        // Let the balloon go side to side
         if (Input.GetKey(KeyCode.RightArrow))
         {
             playerRb.AddForce(Vector3.right * horizontalForce);
@@ -47,20 +50,25 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    //Detect Collisions
+    // Detect Collisions
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Danger"))
         {
-            Debug.Log("Game Over!");
             enabled = false;
             gameManager.GameOver();
+        }
+
+        if (collision.gameObject.CompareTag("Win"))
+        {         
+            enabled = false;
+            gameManager.Win();
         }
 
     }
 
 
-    //detect money
+    // Detect money
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Money"))
