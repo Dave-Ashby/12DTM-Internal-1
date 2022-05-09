@@ -5,13 +5,13 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     // Variables for enemy speed
-    public float horizontalForce = 10;
-    public float VerticalForce = 15;
+    public float horizontalForce = 0.5f;
+    public float VerticalForce = 1f;
 
     // Rigidbody
     private Rigidbody enemyRb;
-    
-    // Posistions of player and enemy 
+
+    // Posistions of player and enemy
     public Transform player;
     public Transform enemy;
 
@@ -28,6 +28,9 @@ public class EnemyController : MonoBehaviour
     {
         // Define the enemy rigidbody
         enemyRb = GetComponent<Rigidbody>();
+
+
+        player = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame

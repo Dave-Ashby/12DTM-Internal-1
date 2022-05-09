@@ -215,8 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a6784e45308b94fb8095667cb0718f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalForce: 25
-  verticalForce: 100
+  horizontalForce: 5
+  verticalForce: 10
 --- !u!135 &1950905848
 SphereCollider:
   m_ObjectHideFlags: 0

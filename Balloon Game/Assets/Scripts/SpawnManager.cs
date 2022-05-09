@@ -11,11 +11,9 @@ public class SpawnManager : MonoBehaviour
     public Transform player;
 
     // X position of when to spawn enemy
-    public float chamberEntrance = 79f;
-    public float chamberExit = 126.5f;
+    public float chamberEntrance = 79;
 
     public float spawnInterval = 5;
-
 
     public GameObject wall1;
     public GameObject wall2;
@@ -36,6 +34,8 @@ public class SpawnManager : MonoBehaviour
 
         moneyTracker = 0;
         UpdateTracker(0);
+
+        InvokeRepeating("SpawnEnemy", 2, 8);
     }
 
     // Update is called once per frame
@@ -45,21 +45,26 @@ public class SpawnManager : MonoBehaviour
         if ((player.position.x > chamberEntrance) && (moneyTracker < 5))
         {
             isFightingEnemies = true;
+            wall1.gameObject.SetActive(true);
+            wall2.gameObject.SetActive(true);
         }
         if (moneyTracker >= 5)
         {
             isFightingEnemies = false;
+            wall1.gameObject.SetActive(false);
+            wall2.gameObject.SetActive(false);
         }    
 
-        while (isFightingEnemies == true)
-        {
-            InvokeRepeating("SpawnEnemy", 0, spawnInterval);
-        }
     }
 
     void SpawnEnemy()
     {
-        Instantiate(enemyPrefabs[0], new Vector3(102, 9, 0), enemyPrefabs[0].transform.rotation);
+        if (isFightingEnemies == true)
+        {
+            Instantiate(enemyPrefabs[0], new Vector3(102, 9, 0), enemyPrefabs[0].transform.rotation);
+            Debug.Log("Enemy Spawned");
+        }
+        
     }
 
     public void UpdateTracker(int moneyToAdd)
@@ -67,6 +72,7 @@ public class SpawnManager : MonoBehaviour
         if (player.position.x > chamberEntrance)
         {
             moneyTracker = moneyTracker + moneyToAdd;
+            Debug.Log("Money Collected");
         }
     }
 }

@@ -157,12 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e8244bc7f5b4f488b8e0f85ec71bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalForce: 10
-  VerticalForce: 15
+  horizontalForce: 0.5
+  VerticalForce: 1
   player: {fileID: 0}
   enemy: {fileID: 1252424353874074833}
   startAttacking: 75
-  stopAttacking: 125
+  stopAttacking: 126.5
   movementX: {x: 0, y: 0, z: 0}
   movementY: {x: 0, y: 0, z: 0}
 --- !u!1001 &1256357759050569762

@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     private float GravityModifier = 1.5f;
 
     // Variables for the amount of force applied to the balloon
-    public float horizontalForce = 25f;
-    public float verticalForce = 70f;
+    public float horizontalForce = 1.5f;
+    public float verticalForce = 3f;
 
     // Game Manager
     private GameManager gameManager;
