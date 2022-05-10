@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-
+    // Variables:
     // Integer for score
     private int score;
 

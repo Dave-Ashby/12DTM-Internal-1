@@ -30,16 +30,21 @@ public class Collection : MonoBehaviour
     }
 
     // Detect collisions with the player
-    private void OnTriggerEnter(Collider Player)
+    private void OnTriggerEnter(Collider other)
     {
-
-        if (collectedAlready == false)
+        if (other.CompareTag("Player"))
         {
-            gameManager.UpdateScore(pointValue);
-            spawnManager.UpdateTracker(1);
-            collectedAlready = true;
+            if (collectedAlready == false)
+            {
+                gameManager.UpdateScore(pointValue);
+                spawnManager.UpdateTracker(1);
+                // Change the state of the boolean to avoid double collecting
+                collectedAlready = true;
+            }
         }
+        
     }
+    // Change the state of the boolean back so the next money can be collected
     private void OnTriggerExit(Collider Player)
     {
         collectedAlready = false;

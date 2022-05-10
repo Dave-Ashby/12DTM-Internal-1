@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-
+    // Variables:
+    // Index for enemy spawning
     public GameObject[] enemyPrefabs;
 
     // Posistion of player
@@ -13,41 +14,43 @@ public class SpawnManager : MonoBehaviour
     // X position of when to spawn enemy
     public float chamberEntrance = 79;
 
-    public float spawnInterval = 5;
+    // How often the game will spawn enemies
+    public float spawnInterval = 8;
 
+    // Walls of the chamber
     public GameObject wall1;
     public GameObject wall2;
 
+    // Booleans for for enemy fight
     public bool isFightingEnemies;
     public bool isMoneyCollected;
 
+    // Keep track of how much money is collected
     private int moneyTracker;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Disable walls
+        // Set up the level
         wall1.gameObject.SetActive(false);
         wall2.gameObject.SetActive(false);
-
         isFightingEnemies = false;
-
         moneyTracker = 0;
         UpdateTracker(0);
-
-        InvokeRepeating("SpawnEnemy", 2, 8);
+        InvokeRepeating("SpawnEnemy", 2, spawnInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        // Start the enemy fight
         if ((player.position.x > chamberEntrance) && (moneyTracker < 5))
         {
             isFightingEnemies = true;
             wall1.gameObject.SetActive(true);
             wall2.gameObject.SetActive(true);
         }
+        // End the enemy fight
         if (moneyTracker >= 5)
         {
             isFightingEnemies = false;
@@ -56,7 +59,7 @@ public class SpawnManager : MonoBehaviour
         }    
 
     }
-
+    // Spawn the Enemies
     void SpawnEnemy()
     {
         if (isFightingEnemies == true)
@@ -66,13 +69,12 @@ public class SpawnManager : MonoBehaviour
         }
         
     }
-
+    // Count how much money the player has collected in order to clear the room
     public void UpdateTracker(int moneyToAdd)
     {
         if (player.position.x > chamberEntrance)
         {
             moneyTracker = moneyTracker + moneyToAdd;
-            Debug.Log("Money Collected");
         }
     }
 }

@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
         // Define the enemy rigidbody
         enemyRb = GetComponent<Rigidbody>();
 
-
+        // Get the position of the player
         player = GameObject.Find("Player").GetComponent<Transform>();
     }
 
